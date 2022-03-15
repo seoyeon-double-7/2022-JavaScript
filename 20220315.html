@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        function sum(a,b){
-            return a+b;
+        //익명함수
+        // const sayHi = function () {
+        //     alert('Hello(❁´◡`❁)');
+        // }
+        // sayHi();
+
+        const sum = function (a, b) {
+            return(a+b);
         }
-        //9
-        let r = sum(4,5);
+        sumResult = sum(3,4);
+        alert(sumResult)
 
-        function doNothing(){
-        //    return;
-        }
-
-        // undefined
-        let r2 = doNothing();
-
-        let r3 = alert('Hello');
-    //    r3 => undefined라면 alert 함수는 리턴이 없다(O)
     </script>
 </head>
 <body></body>
