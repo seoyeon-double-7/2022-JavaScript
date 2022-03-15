@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        //익명함수
-        let sayHi = function () {
-            alert('Hello(❁´◡`❁)');
+        function ask(question, yes, no) {
+            if (confirm(question)) yes()
+            else no();
         }
-        // sayHi();
 
-        // 함수만 가지고 옴(자체대입)
-        // let func = sayHi;
-        //함수 호출
-        let func = sayHi();
-        func();
+        function showOk() {
+            alert("동의하셨습니다.");
+        }
 
-        // const sum = function (a, b) {
-        //     return(a+b);
-        // }
-        // sumResult = sum(3,4);
-        // alert(sumResult)
+        function showCancel() {
+            alert("취소 버튼을 누르셨습니다.");
+        }
+
+        // 사용법: 함수 showOk와 showCancel가 ask 함수의 인수로 전달됨
+        // 매개변수로 showOK() 괄호를 쓰면 반환값(undefined)이 넘겨진다!
+        ask("동의하십니까?", showOk, showCancel);
+
 
     </script>
 </head>
