@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        function showCount(count){
-            alert(count ?? "unknown");
+        function sum(a,b){
+            return a+b;
+        }
+        //9
+        let r = sum(4,5);
+
+        function doNothing(){
+        //    return;
         }
 
-        //0은 false값이지만, 값은 엄연히 존재하므로 0출력
-        showCount(0);
-        //null -> unknown 출력
-        showCount(null);
-        //undefined -> unknown 출력
-        showCount();
+        // undefined
+        let r2 = doNothing();
 
     </script>
 </head>
