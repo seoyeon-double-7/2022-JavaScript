@@ -5,16 +5,22 @@
     <title>Title</title>
     <script>
         //익명함수
-        // const sayHi = function () {
-        //     alert('Hello(❁´◡`❁)');
-        // }
+        let sayHi = function () {
+            alert('Hello(❁´◡`❁)');
+        }
         // sayHi();
 
-        const sum = function (a, b) {
-            return(a+b);
-        }
-        sumResult = sum(3,4);
-        alert(sumResult)
+        // 함수만 가지고 옴(자체대입)
+        // let func = sayHi;
+        //함수 호출
+        let func = sayHi();
+        func();
+
+        // const sum = function (a, b) {
+        //     return(a+b);
+        // }
+        // sumResult = sum(3,4);
+        // alert(sumResult)
 
     </script>
 </head>
