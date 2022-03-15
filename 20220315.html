@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        //만약 text 값이 전달되지 ㅇ낳을 경우 'no text given' 값을 기본 값으로 사용
-        function showMessage(from, text = "no text given"){
-            alert(from + ": " + text);
+        function showCount(count){
+            alert(count ?? "unknown");
         }
+
+        //0은 false값이지만, 값은 엄연히 존재하므로 0출력
+        showCount(0);
+        //null -> unknown 출력
+        showCount(null);
+        //undefined -> unknown 출력
+        showCount();
+
     </script>
 </head>
 <body></body>
