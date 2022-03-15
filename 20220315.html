@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-
-        //두 개이 파라미터 존재(from, text)
-        function showMessage(from, text){
-            alert(from + ': ' + text);
+        //만약 text 값이 전달되지 ㅇ낳을 경우 'no text given' 값을 기본 값으로 사용
+        function showMessage(from, text = "no text given"){
+            alert(from + ": " + text);
         }
-        showMessage('Ann', 'Hello!');
     </script>
 </head>
-<body>
-
-</body>
+<body></body>
 </html>
