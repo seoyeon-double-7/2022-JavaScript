@@ -5,9 +5,13 @@
     <title>Title</title>
     <script>
         function showMessage(){ //함수 선언
-            alert("Hello");
+            //함수 내부에서 사용할 지역 변수 선언
+            let message = "Hello";
+            //함수 내부에서만 message 접근가능
+            alert(message);
         }
         showMessage();
+        // alert(hello); 실행 안됨.
     </script>
 </head>
 <body>
