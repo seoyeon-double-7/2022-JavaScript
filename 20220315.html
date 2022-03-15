@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        function showMessage(){ //함수 선언
-            //함수 내부에서 사용할 지역 변수 선언
-            let message = "Hello";
-            //함수 내부에서만 message 접근가능
-            alert(message);
+
+        //두 개이 파라미터 존재(from, text)
+        function showMessage(from, text){
+            alert(from + ': ' + text);
         }
-        showMessage();
-        // alert(hello); 실행 안됨.
+        showMessage('Ann', 'Hello!');
     </script>
 </head>
 <body>
