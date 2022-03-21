@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
+        //캡슐화, 추상화 가능
         function ask(question, yes, no) {
             if (confirm(question)) yes()
             else no();
@@ -20,8 +21,6 @@
         // 사용법: 함수 showOk와 showCancel가 ask 함수의 인수로 전달됨
         // 매개변수로 showOK() 괄호를 쓰면 반환값(undefined)이 넘겨진다!
         ask("동의하십니까?", showOk, showCancel);
-
-
     </script>
 </head>
 <body></body>
