@@ -38,62 +38,93 @@
         //화살표
         let gugudan1 = (a, b) => {
             //전달 인자값이 없을 때
-            if (a == null && b == null) {
-                for (var i = 2; i <= 9; i++) {
-                    for (var j = 1; j <= 9; j++)
-                        console.log(`${i} X ${j} = ${i * j}`)
-                    console.log("-------------------------")
+            if (a == null) a = 2;
+            if (b == null) b = 2;
+            for (var i = a; i <= b; i++) {
+                for (var j = 1; j <= 9; j++) {
+                    console.log(i + " x " + j + " = " + (i * j))
                 }
-            } else {
-                for (var i = a; i <= b; i++) {
-                    for (var j = 1; j <= 9; j++) {
-                        console.log(i + " x " + j + " = " + (i * j))
-                    }
-                    console.log("-------------------------")
-                }
+                console.log("-------------------------")
             }
         }
 
         //선언
         function gugudan2(a, b) {
             //전달 인자값이 없을 때
-            if (a == null && b == null) {
-                for (var i = 2; i <= 9; i++) {
-                    for (var j = 1; j <= 9; j++)
-                        console.log(`${i} X ${j} = ${i * j}`)
-                    console.log("-------------------------")
+            if (a == null) a = 2;
+            if (b == null) b = 2;
+            /*
+            * a=a||2
+            * b=b||9
+            * */
+            for (var i = a; i <= b; i++) {
+                for (var j = 1; j <= 9; j++) {
+                    console.log(i + " x " + j + " = " + (i * j))
                 }
-            } else {
-                for (var i = a; i <= b; i++) {
-                    for (var j = 1; j <= 9; j++) {
-                        console.log(i + " x " + j + " = " + (i * j))
-                    }
-                    console.log("-------------------------")
-                }
+                console.log("-------------------------")
             }
+
         }
 
         //표현식
-        let gugudan3 = function(a, b) {
+        let gugudan3 = function (a, b) {
             //전달 인자값이 없을 때
-            if (a == null && b == null) {
-                for (var i = 2; i <= 9; i++) {
-                    for (var j = 1; j <= 9; j++)
-                        console.log(`${i} X ${j} = ${i * j}`)
-                    console.log("-------------------------")
+            if (a == null) a = 2;
+            if (b == null) b = 2;
+            for (var i = a; i <= b; i++) {
+                for (var j = 1; j <= 9; j++) {
+                    console.log(i + " x " + j + " = " + (i * j))
                 }
-            } else {
-                for (var i = a; i <= b; i++) {
-                    for (var j = 1; j <= 9; j++) {
-                        console.log(i + " x " + j + " = " + (i * j))
-                    }
-                    console.log("-------------------------")
-                }
+                console.log("-------------------------")
             }
         }
-        gugudan1()
-        gugudan2(2,6)
-        gugudan3(5,7)
+        /*gugudan1()
+        gugudan2(2,4)
+        gugudan3(7,9)*/
+
+        //let user = new Object();
+        //let user = {};
+        // '객체 리터럴' 문법으로 객체 생성
+        let user = {
+            // 키: "name", 값: "John"
+            name: "John",
+            // 키: "age", 값: 30
+            age: 30,
+            gender: "Male",
+            salary: 3000
+        };
+        console.log(user.name); // John
+        console.log(user["name"]); // John
+        console.log(user.age); // 30
+
+        //객체에 속성을 추가할 수 있다.
+        user.isAdmin = true;
+        user["isAdmin"] = true;
+        console.log(user);
+
+        //    객체에 속성을 제거할 수 있다.
+        delete user.age;
+        console.log(user);
+
+        //    객체에 새로 접근하는 것은 안되는데(상수), 속성값은 바꿀 수 있다.
+        let keyName = "name";
+
+        //없는 속성이므로 undefined만 나옴
+        console.log(user.keyName);
+
+        //속성의 값 출력 --> 간접적으로 쓰려면 대괄호를 쓰자!
+        console.log(user[keyName]);
+
+        //    값 단축 구문 사용
+        let name = "John";
+        let age = 20;
+
+        // 값 단축 구문없이 객체 정의
+        let user = {
+            name: name,
+            age: age
+        }
+
     </script>
 </head>
 <body>
