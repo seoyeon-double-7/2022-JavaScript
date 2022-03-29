@@ -62,14 +62,22 @@
             }
             return obj;
         }
-        let obj = {
-            name : "cindy",
+        let o = {
+            name : "oondy",
             age : 18,
             grade : 2,
             hobby : "coding",
             school : "mirim"
         }
-        console.log(copy(obj))
+        //shallow copy (참조 복사)
+        let h = user;
+        // deep copy (독립된 객체를 만들어서 복사)
+        let copied = copy(o);
+
+        console.log(copied)
+        console.log(o === copied);   //false
+        copied.name = "kindy";
+        console.log(o.name);
 
     </script>
 </head>
