@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // let user = {};
+        // console.log(user.noSuchProp);
+
+        // let user = {name : "John"};
+        // console.log("name" in user);    //true
+        // console.log("asdf" in user);    //false
+
+        /*let user = {
+            name: "John",
+            age: 30,
+            isAdmin: true
+        }
+        for (let key in user) {
+            console.log(key);
+            console.log(user[key])
+        }*/
+
+        let message = "Hello!";
+        //    원시값 데입으로 인하여 값의 복사가 발생
+        let phrase = message;
+        phrase = "Bye!";
+
+        let user = {
+            name: "John"
+        };
+        let admin = user;
+        admin.name = "Ken";
+        //console.log(user.name)  //"Ken"
+
+        function changeName(user){
+        //    원본 객체에 영향을 끼칢
+            user.name = "Pete";
+        }
+        changeName(admin);
+        //console.log(user.name); //pete
+
+        let a = {};
+        let b = a;
+
+        // console.log( a == b);   //true
+        // console.log( a === b);  //true
+
+        let c = {};
+        let d = {};
+        // console.log(c === d);   //false
+        // console.log({} === {}); //false
+
+        // 문제) copy 함수로 전달된 객체를 복사한 객체를 반환하는 함수작성
+        // 1. copy 함수 내부에서 빈 객체 생성
+        // 2. 전달받은 객체를 for-in 반복문으로 모든 속성값에 접근하여 1에서 생성한 빈 객체에 내용 복사
+        // 3. 1에서 생성한 객체 반환
+        function copy(obj){
+            let copy_obj = {};
+            for(let k in obj){
+                copy_obj[k] = obj[k];
+            }
+            return obj;
+        }
+        let obj = {
+            name : "cindy",
+            age : 18,
+            grade : 2,
+            hobby : "coding",
+            school : "mirim"
+        }
+        console.log(copy(obj))
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
