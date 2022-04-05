@@ -21,63 +21,171 @@
             console.log(user[key])
         }*/
 
-        let message = "Hello!";
-        //    원시값 데입으로 인하여 값의 복사가 발생
-        let phrase = message;
-        phrase = "Bye!";
-
-        let user = {
-            name: "John"
-        };
-        let admin = user;
-        admin.name = "Ken";
-        //console.log(user.name)  //"Ken"
-
-        function changeName(user){
-        //    원본 객체에 영향을 끼칢
-            user.name = "Pete";
-        }
-        changeName(admin);
-        //console.log(user.name); //pete
-
-        let a = {};
-        let b = a;
-
-        // console.log( a == b);   //true
-        // console.log( a === b);  //true
-
-        let c = {};
-        let d = {};
-        // console.log(c === d);   //false
-        // console.log({} === {}); //false
-
+        // let message = "Hello!";
+        // //    원시값 데입으로 인하여 값의 복사가 발생
+        // let phrase = message;
+        // phrase = "Bye!";
+        //
+        // let user = {
+        //     name: "John"
+        // };
+        // let admin = user;
+        // admin.name = "Ken";
+        // //console.log(user.name)  //"Ken"
+        //
+        // function changeName(user){
+        // //    원본 객체에 영향을 끼칢
+        //     user.name = "Pete";
+        // }
+        // changeName(admin);
+        // //console.log(user.name); //pete
+        //
+        // let a = {};
+        // let b = a;
+        //
+        // // console.log( a == b);   //true
+        // // console.log( a === b);  //true
+        //
+        // let c = {};
+        // let d = {};
+        // // console.log(c === d);   //false
+        // // console.log({} === {}); //false
+        //
         // 문제) copy 함수로 전달된 객체를 복사한 객체를 반환하는 함수작성
         // 1. copy 함수 내부에서 빈 객체 생성
         // 2. 전달받은 객체를 for-in 반복문으로 모든 속성값에 접근하여 1에서 생성한 빈 객체에 내용 복사
         // 3. 1에서 생성한 객체 반환
         function copy(obj){
-            let copy_obj = {};
+            let copyObj = {};
             for(let k in obj){
-                copy_obj[k] = obj[k];
+                copyObj[k] = obj[k];
             }
-            return obj;
+            return copyObj;
         }
         let o = {
-            name : "oondy",
+            name : "cindy",
             age : 18,
             grade : 2,
             hobby : "coding",
             school : "mirim"
         }
         //shallow copy (참조 복사)
-        let h = user;
+        //let h = user;
         // deep copy (독립된 객체를 만들어서 복사)
         let copied = copy(o);
 
         console.log(copied)
-        console.log(o === copied);   //false
-        copied.name = "kindy";
-        console.log(o.name);
+        // ==는 객체의 주소값을 비교, ===는 객체의 타입과 주소값을 비교
+        // 따라서 false가 나옴
+        console.log(o  === copied);   //false
+        copied.name = "aaa";
+        console.log(o.name);    //바뀌지 않음
+
+        // let user = {
+        //     name: "John",
+        //     age: 30,
+        //     // sayHi: function () {
+        //     //     alert("안녕하세요!");
+        //     // }
+        //     sayHi(){
+        //         alert("안녕하세요!");
+        //     }
+        // };
+
+        // user.sayHi = function(){
+        //     alert("안녕하세요!");
+        // }
+        //user.sayHi();
+
+        // let user = {
+        //     name: "John",
+        //     age: 30,
+        //     sayHi() {
+        //         // 이 예제에서 this는 "현재 객체"를 나타냄
+        //         alert(this.name);
+        //     }
+        // };
+        //
+        // // John 출력
+        // user.sayHi();
+
+        // let user = {name: "John"};
+        // let admin = {name: "Admin"};
+        //
+        // function sayHi() {
+        //     alert(this.name);
+        // }
+        //
+        // user.f = sayHi;
+        // admin.f = sayHi;
+        //
+        // // this 값은 기본적으로 "메소드 호출 시점에 점(.) 앞 객체"를 참조
+        // user.f(); // "John" 출력 (메소드 호출 시점에 점 앞의 객체는 user 따라서, this는 user)
+        // admin.f(); // "Admin" 출력 (메소드 호출 시점에 점 앞의 객체는 admin 따라서, this는 admin)
+        //
+        // // 대괄호를 통해서도 메소드 접근 가능
+        // admin['f']();
+
+        // "use strict"
+        //
+        // function sayHi() {
+        //     alert(this);
+        // }
+        //
+        // sayHi();
+        //
+        // "use strict"
+        //
+        // let obj = {
+        //     x: 100,
+        //     logThis() {
+        //         console.log(this);
+        //     }
+        // };
+        // obj.logThis(); // { x: 100 }
+        //
+        // let another = {y: 200};
+        // another.logThis = obj.logThis;
+        // another.logThis(); // { y: 200 }
+        //
+        // let logThis = another.logThis;
+        // logThis(); // Window 객체 (엄격 모드가 적용된 경우 undefined)
+        //
+        // let o = {
+        //     inner: {
+        //         z: 300
+        //     }
+        // };
+        //
+        // o.inner.logThis = obj.logThis;
+        // // 여기서 점 앞의 객체는 o가 아닌 inner임을 유의
+        // o.inner.logThis() // { z: 300 }
+
+        // function User(name){
+        //     // this = {}
+        //     this.name = name;
+        //     this.isAdmin = false;
+        //     // return this
+        // }
+        // let u = new User("John");
+
+        //  Q) 학생을 생성할 수 있는 생성자 함수 정의
+        //    이름, 나이, 성별, 학번을 전달 받아서 객체를 생성하는 역할을 함
+
+        // function Student(name, age, gender, id) {
+        //     this.name = name;
+        //     this.age = age,
+        //     this.gender = gender,
+        //     this.id = id,
+        //     this.sayHi = function(){
+        //         alert("My name : " + this.name);
+        //         }
+        // }
+        //
+        // //    Q2) new 연산자를 이용해서 객체도 생성해보기
+        // let stu = new Student("cindy", 18, "girl", 2103)
+        // stu.sayHi();
+
 
     </script>
 </head>
