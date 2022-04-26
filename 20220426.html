@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let arr = [100, 2, 15, 12, 1];
+        console.log(arr)
+
+        //전략함수
+        function compareNumeric(a, b) {
+            if (a > b) return 1; // 첫 번째 값이 두 번째 값보다 큰 경우 "양수"를 반환
+            if (a == b) return 0; // 두 값이 같은 경우 0을 반환
+            if (a < b) return -1; // 첫 번째 값이 두 번째 값보다 작은 경우 "음수"를 반환
+        }
+
+        arr.sort((a, b) => b - a);     //내림차순
+        // arr.sort((a,b) => a-b); 오름차순
+        // arr.sort(compareNumeric)
+        //arr.sort();
+        //sort를 정렬된 상태에서 사용하면 오류
+        console.log(arr)
+
+        // Q1) 영화 제목 길이 오름차순으로 정렬
+        let movies = ["누구를 위하여 종은 울리나", "기생충", "패왕별희", "북북서로 진로를 돌려라", "시"];
+        movies.sort((a, b) => a.length - b.length)
+        console.log(movies)
+
+
+        // Q2) 학생 점수 내림차순으로 정렬
+        let students = [{name: "김철수", score: 100}, {name: "박미림", score: 80}, {name: "유영희", score: 90}];
+        students.sort((a, b) => b.score - a.score)
+        console.log(students)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -14,14 +14,45 @@
         //     console.log(String.fromCodePoint(i))
         // }
 
-        let matrix = [
-            [1, 2, 3],
-            [4, 5, 6],
-            [7, 8, 9]
+        //let matrix = [
+        //   [1, 2, 3],
+        //    [4, 5, 6],
+        //    [7, 8, 9]
+        //];
+
+        let users = [
+            {id: 1, name: "John", age : 48},
+            {id: 2, name: "Pete", age : 25},
+            {id: 3, name: "Mary", age : 77}
         ];
 
-        // 중심에 있는 요소 5 출력
-        alert(matrix[2][2]);
+        // id가 3보다 작은 모든 사용자 반환 (앞쪽 사용자 두 명을 반환)
+        let someUsers = users.filter(function(user){
+            //true 값만 반환해주는 역할
+           return user.age < 50;
+        });
+
+        /*someUsers.forEach(function(user){
+            console.log(user.name);
+        });*/
+        let arr = [1,2,3,4];
+
+        //arr.forEach(function(item, idx){
+        //    console.log(item,idx);
+        //});
+
+        //map은 변환을 해주는 아이
+        let t = arr.map(function(item){
+            return item * 2;
+        });
+
+        let names = users.map(function(item){
+            return item.name;
+        });
+        console.log(names)
+
+
+
     </script>
 </head>
 <body>
