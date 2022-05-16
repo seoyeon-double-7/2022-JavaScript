@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        <!--  1. 더하는 함수 sumAll 함수 작성      -->
+        function sumAll(a){
+            let sum = 0; //초기화 해야 됨
+            for(let i=0; i<a.length; i++){
+                sum+=a[i];
+            }
+            return sum;
+        }
+
+        const r1 = sumAll([1,2,3]);
+        const r2 = sumAll([1,2,3,4,5]);
+        console.log(r1);
+        console.log(r2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
