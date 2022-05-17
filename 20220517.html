@@ -5,18 +5,53 @@
     <title>Title</title>
     <script>
         <!--  1. 더하는 함수 sumAll 함수 작성      -->
-        function sumAll(a){
-            let sum = 0; //초기화 해야 됨
-            for(let i=0; i<a.length; i++){
-                sum+=a[i];
-            }
-            return sum;
-        }
+        // function sumAll(a){
+        //     let sum = 0; //초기화 해야 됨
+        //     for(let i=0; i<a.length; i++){
+        //         sum+=a[i];
+        //     }
+        //     return sum;
+        // }
+        //
+        // const r1 = sumAll([1,2,3]);
+        // const r2 = sumAll([1,2,3,4,5]);
+        // console.log(r1);
+        // console.log(r2);
 
-        const r1 = sumAll([1,2,3]);
-        const r2 = sumAll([1,2,3,4,5]);
-        console.log(r1);
-        console.log(r2);
+        // 2-1 filter 함수 작성 (두번째 수가 포함된 수를 배열에서 삭제)
+        function filter(arr, remove){
+            const new_arr = [];
+            for(let i=0; i<arr.length; i++){
+                if(arr[i] !== remove){
+                    new_arr.push(arr[i]);
+                }
+            }
+            return new_arr;
+        }
+        const result1 = filter([1, 2, 3], 2)
+        const result2 = filter([1, 2, 3, 3, 5, 2], 3)
+        console.log(result1)
+        console.log(result2)
+
+        //2-2 변형
+        function filter2(arr1, arr2){
+            const result = []
+
+            for(let i = 0; i < arr1.length; i++){
+                let found = false;
+                for(let j=0; j < arr2.length; j++){
+                    if(arr2[j] === arr1[i]){
+                        found = true;
+                        break;
+                    }
+                }
+                if(!found) result.push(arr1[i])
+            }
+            return result;
+        }
+        const result3 = filter2([1,2,3,3,5,2], [3, 2]);
+        console.log(result3)
+
     </script>
 </head>
 <body>
