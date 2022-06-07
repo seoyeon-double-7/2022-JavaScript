@@ -127,6 +127,22 @@
         query(user2);
         query(phone);
 
+        // ########## 1번 메서드 만들기 ##########
+        const user3 = {id: 1, name:"John", age:20};
+        user3.isMinor = function(){
+            if(this.age <20){
+                return true;
+            }
+            else return false;
+        }
+        user3.speakName = function(num=1){
+            for(let i=1; i<=num; i++){
+                console.log(this.name)
+            }
+        }
+        console.log(user3.isMinor());
+        user3.speakName(2);
+        
     </script>
 </head>
 
