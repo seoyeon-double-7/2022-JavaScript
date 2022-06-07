@@ -80,6 +80,7 @@
         let obj6 = { name, age, address, school, grade, height };
         console.log(obj6)
 
+
         // ########## 7번 changeObject 함수 정의 ##########
         function changeObject(obj, key, value, bool){
             if(bool){
@@ -100,6 +101,31 @@
         
         console.log(u1)
         console.log(u2);
+
+
+        // ########## 8번 query 함수 작성 ##########
+        function query(query_obj){
+            let key_array = [];
+            for(let k in query_obj){
+                key_array.push(k);
+            }
+            const s = key_array.join(",");
+            while(true){
+                let val = prompt(`${s} 중 속성 입력`)
+                
+                if(key_array.includes(val)){
+                    alert(query_obj[val]);
+                    break;
+                }
+                else{
+                    alert("다시입력하세요");
+                }
+            }            
+        }
+        const user2 = {name:"John", age:20};
+        const phone = {price:1000, model:"Galaxy", company:"samsung"};
+        query(user2);
+        query(phone);
 
     </script>
 </head>
