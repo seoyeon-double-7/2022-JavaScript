@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        // ########## 1번 객체 생성자, 리터럴 사용해서 객체 생성 ##########
+        // 객체 생성자
+        let obj1 = new Object();
+
+        obj1.name1 = "Puppy";
+        obj1.age1 = 5;
+        obj1.gender1 = "female";
+
+        // 객체 리터럴
+        let obj2 = {
+            name2: "Puppy",
+            age2: 5,
+            gender2: "female"
+        }
+
+        console.log(obj1);
+        console.log(obj2)
+
+
+        // ########## 2번 주변에서 볼수 있는 객체들의 속성을 객체로 정의하기 ##########
+        let student = {
+            name: "seoyeon",
+            age: 18,
+            address: "gunpo baeckdohanyang apt",
+            school: "mirim girl's information science high school",
+            grade: "second",
+            height: 160
+        }
+        student.siblings = 2;
+
+        console.log(student);
+
+
+        //########## 3번 2번에서 생성한 객체에 동적으로 속성 추가하되 두가지 방법(점 연산자, 대괄호 연산자) 써보기 ##########
+
+        let student2 = new Object();
+
+        student2.name = "seoyeon";
+        student2.age = 18;
+        student2.address = "gunpo baeckdohanyang apt";
+        student2.school = "mirim girl's information science high school";
+        student2["grade"] = "second";
+        student2["height"] = 160
+        student["siblings"] = 2;
+
+        console.log(student2);
+
+
+        // ########## 4번  delete 연산자를 이용해서 임의의 "동적으로" 속성 지워보기 ##########
+        // 동적(시간에 지나면서 바뀌는 것), 정적(원래 있는 것) 
+        delete student.grade;
+        console.log(student);
+
+
+        // ########## 5번  하이픈과 스페이스가 포함된 속성 추가하기 ##########
+        // 하이픈과 스페이스를 포함한 속성을 추가하려면 대괄호를 써야함
+        let obj5 = new Object();
+        obj5["with-hyphen"] = "-";
+        obj5["with space"] = " ";
+
+        console.log(obj5);
+
+
+        // ########## 6번 2번 객체를 값 단축구문으로 작성하기 ##########
+        let name = "seoyeon";
+        let age = 18;
+        let address = "gunpo baeckdohanyang apt";
+        let school = "mirim girl's information science high school";
+        let grade = "second";
+        let height = 160;
+        // 값 단축 구문
+        let obj6 = { name, age, address, school, grade, height };
+        console.log(obj6)
+
+
+        // ########## 7번 changeObject 함수 정의 ##########
+        function changeObject(obj, key, value, bool){
+            if(bool){
+                obj[key] = value;
+                return obj;
+            }else{
+                const copy = Object.assign({}, obj);
+                copy[key] = value;
+                return copy;
+            }
+        }
+        const user = {name:"John", age:20};
+        const u1 = changeObject(user, "name", "Sam", "true");
+        const u2 = changeObject(user, "age", 5, false);
+
+        console.log(user === u1);    //true
+        console.log(user === u2);    //false
+        
+        console.log(u1)
+        console.log(u2);
+
+
+        // ########## 8번 query 함수 작성 ##########
+        function query(query_obj){
+            let key_array = [];
+            for(let k in query_obj){
+                key_array.push(k);
+            }
+            const s = key_array.join(",");
+            while(true){
+                let val = prompt(`${s} 중 속성 입력`)
+                
+                if(key_array.includes(val)){
+                    alert(query_obj[val]);
+                    break;
+                }
+                else{
+                    alert("다시입력하세요");
+                }
+            }            
+        }
+        const user2 = {name:"John", age:20};
+        const phone = {price:1000, model:"Galaxy", company:"samsung"};
+        query(user2);
+        query(phone);
+
+        // ########## 1번 메서드 만들기 ##########
+        const user3 = {id: 1, name:"John", age:20};
+        user3.isMinor = function(){
+            if(this.age <20){
+                return true;
+            }
+            else return false;
+        }
+        user3.speakName = function(num=1){
+            for(let i=1; i<=num; i++){
+                console.log(this.name)
+            }
+        }
+        console.log(user3.isMinor());
+        user3.speakName(2);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
