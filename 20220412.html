@@ -7,7 +7,7 @@
         //부분 문자열 추출하기
         //let str = "stringify";
         //alert(str.slice(0, 5)); // 'strin', 0번째부터 5번째 위치까지(5번째 위치의 글자는 포함하지 않음)
-        //alert(str.slice(0, 1)); // 's', 0번째부터 1번째 위치까지(1번째 위치의 자는 포함하지 않음)
+        //alert(str.(0slice, 1)); // 's', 0번째부터 1번째 위치까지(1번째 위치의 자는 포함하지 않음)
 
         //가부터 코드포인트를 이용해서 출력하기
         //for(let i=44032; i<55000; i++){
@@ -29,9 +29,9 @@
         // id가 3보다 작은 모든 사용자 반환 (앞쪽 사용자 두 명을 반환)
         let someUsers = users.filter(function(user){
             //true 값만 반환해주는 역할
-           return user.age < 50;
+           return user.id < 3;
         });
-
+        console.log(someUsers)
         /*someUsers.forEach(function(user){
             console.log(user.name);
         });*/

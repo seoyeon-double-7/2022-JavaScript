@@ -19,39 +19,85 @@
         // console.log(r2);
 
         // 2-1 filter 함수 작성 (두번째 수가 포함된 수를 배열에서 삭제)
-        function filter(arr, remove){
-            const new_arr = [];
-            for(let i=0; i<arr.length; i++){
-                if(arr[i] !== remove){
-                    new_arr.push(arr[i]);
-                }
-            }
-            return new_arr;
-        }
-        const result1 = filter([1, 2, 3], 2)
-        const result2 = filter([1, 2, 3, 3, 5, 2], 3)
-        console.log(result1)
-        console.log(result2)
-
+        // function filter(arr, remove){
+        //     const new_arr = [];
+        //     for(let i=0; i<arr.length; i++){
+        //         if(arr[i] !== remove){
+        //             new_arr.push(arr[i]);
+        //         }
+        //     }
+        //     return new_arr;
+        // }
+        // const result1 = filter([1, 2, 3], 2)
+        // const result2 = filter([1, 2, 3, 3, 5, 2], 3)
+        // console.log(result1)
+        // console.log(result2)
+        //
         //2-2 변형
-        function filter2(arr1, arr2){
-            const result = []
+        // function filter2(arr1, arr2){
+        //     const result = []
+        //
+        //     for(let i = 0; i < arr1.length; i++){
+        //         let found = false;  //0
+        //         for(let j=0; j < arr2.length; j++){
+        //             if(arr2[j] === arr1[i]){
+        //                 found = true;
+        //                 break;
+        //             }
+        //         }
+        //         if(!found) result.push(arr1[i])
+        //     }
+        //     return result;
+        // }
+        // const result3 = filter2([1,2,3,3,5,2], [3, 2]);
+        // console.log(result3)
 
-            for(let i = 0; i < arr1.length; i++){
-                let found = false;
-                for(let j=0; j < arr2.length; j++){
-                    if(arr2[j] === arr1[i]){
-                        found = true;
-                        break;
-                    }
-                }
-                if(!found) result.push(arr1[i])
+    //    3. 새 객체 만든 후 x,y 더해주기
+    //     function move (num, move_x, move_y){
+    //             let new_p = { x:num.x,  y:num.y }
+    //             new_p.x += move_x;
+    //             new_p.y += move_y;
+    //
+    //             return new_p;
+    //     }
+    //
+    //     let p1 = { x:0, y:2}
+    //
+    //     let p2 = move(p1,3,4)
+    //
+    //     console.log(p2);
+
+
+
+        function swap(obj){
+            const o2= {};
+            for(let variable in obj) {
+                let s = variable
+                variable = obj[variable]
+                o2[variable] = s
             }
-            return result;
+            return o2
         }
-        const result3 = filter2([1,2,3,3,5,2], [3, 2]);
-        console.log(result3)
-
+        const o = {"a":"B", "c":"D"}
+        const o2 = swap(o);
+        console.log(o2)
+    //
+    //    맵버전
+    //     function chunck(arr, size){
+    //         if(arr.length === 0) return [];
+    //
+    //         const r = [];
+    //         for(let i=0; i<arr.length; i+=size){
+    //             r.push(arr.slice(i, i+size));
+    //         }
+    //         return r;
+    //     }
+    //
+    //     let chunck1 = chunck([1,2,3,4,5],2);
+    //     console.log(chunck1)
+    //
+    //     let chunck2 = chunck([1,2,3,4,5],3);
+    //     console.log(chunck2)
     </script>
 </head>
 <body>
