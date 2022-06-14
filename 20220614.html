@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    // 1.(1),(2) user객체에 isMionr(리터럴방식), speackNAme(단축구문형식)으로 메소드 정의
+    const user = {
+        id: 1, name:"John", age:20,
+        isMinor : function(){
+            if(this.age <20) return true;
+            else return false;
+        },
+        speakName(num=1){
+            for(let i=1; i<=num; i++){
+                console.log(this.name)
+            }
+        }
+    };
+    console.log(user.isMinor());
+    user.speakName(2);
+
+
+    // 1. (3) 생성자 함수 작성
+    function Point(x, y){
+        this.x = x;
+        this.y = y;
+    }
+
+    function User(id, name, age){
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.isMinor = function(){
+            if(this.age <20) return true;
+            else return false;
+        }
+    }
+
+    let p = new Point(2, 3)
+    console.log(p)
+
+    let u = new User(1, "Jhon", 20);
+    console.log(u);
+
+    // 1. (4) Bank 생성자 함수 정의
+    function Bank(money=0){
+        this.money = money;
+        //입금
+        this.deposit = function(input){
+            this.money += input;
+        }
+        //잔고
+        this.getBalance = function(){
+            return this.money;
+        }
+        //출금
+        this.withdraw = function(output){
+            if(this.money >= output ) {
+                this.money -= output;
+                return output;
+            }else{
+                let temp = this.money;
+                this.money = 0;
+                return temp;
+
+            }
+
+        }
+    }
+
+    let bank = new Bank();
+    bank.deposit(1000);  //입금
+    bank.deposit(2000);
+    let b1 = bank.getBalance(); //잔고
+    console.log(b1); // 3000
+    let r1 = bank.withdraw(1000)    //출금
+    console.log(r1);    //2000
+    let b2 = bank.getBalance();
+    console.log(b2);    //2000
+    let r2 = bank.withdraw(5000);
+    console.log(r2);    //2000
+    console.log(bank.getBalance()); //0
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
