@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+/*      showPerson의 파라미터 부분에 구조분해 할당을 적용하여
+        내부에서 name, age 값으로 이름, 나이에 접근하여
+        콘솔 출력할 수 있도록 하되, 이름 속성이 객체에 없으면
+        "Anoymous" 값을 대입받을 수 있도록 코드 작성
+*/
+        function showPerson({name="Anonymous", age}){
+            alert(`${name} ${age}`);
+        }
+
+        const person = {name : "Jhon", age : 20};
+        const person2 = {age : 20};
+        showPerson(person);
+        showPerson(person2);
+
+        
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
